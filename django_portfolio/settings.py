@@ -85,8 +85,12 @@ DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
         default='postgresql://postgres:postgres@localhost:5432/mysite',
-        conn_max_age=600
-    )
+        conn_max_age=600,
+    ),
+    'OPTIONS': {
+            'client_encoding': 'UTF8',  # Ajusta la codificación según tu configuración
+            'charset': 'utf8',
+        },
 }
 
 # Password validation
