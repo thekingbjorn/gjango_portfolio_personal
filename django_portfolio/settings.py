@@ -87,10 +87,7 @@ DATABASES = {
         default='postgresql://postgres:postgres@localhost:5432/mysite',
         conn_max_age=600,
     ),
-    'OPTIONS': {
-            'client_encoding': 'UTF8',  # Ajusta la codificación según tu configuración
-            'charset': 'utf8',
-        },
+    
 }
 
 # Password validation
