@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<header class="row bg-black">
+    <div class="col-md-4">
+        <img src="{% static 'portfolio/julian_garcete.webp' %}" class="p-4 img-perfil" width="340px" height="340px"
+            alt="">
+    </div>
+    <div class="col-md-8 my-auto">
+        <h1>Soy <strong>Garcete Julian</strong></h1>
+        <h3>Soy un Desarrollador Backend Python</h3>
+
+        <p>Desarrollador Backend y Python con experiencia en el manejo de Flask y Django. Manejo en SQL y creación de
+            CRUDs robustos. Comprometido con el aprendizaje continuo y con habilidades destacadas para trabajar en
+            equipo. Busco un entorno laboral donde pueda seguir ampliando mis conocimientos y contribuir al éxito del
+            equipo.</p>
+        <a href="{% static 'portfolio/cv_garcete_julian2.pdf' %}" target="_blank"
+            class="btn btn-primary btn-lg rounded-0 my-3">Descargar CV</a>
+    </div>
+</header>
+
+
+<div class="row my-4 text-center">
+
+    <h3>Mis Poyectos</h3>
+    <p>Django: Estructura poderosa. Flask: Sencillez ágil.</p>
+
+    {% for project in projects %}
+
+    <div class="col-md-4 p-4">
+        <div class="card bg-black card-project">
+            <img src="{{ project.image.url }}" alt="{{project.title}}" class="card-img-top">
+            <div class="card-body">
+                <h2>{{project.title}}</h2>
+                <p>{{project.description}}</p>
+
+                {% if project.url %}
+                <a href="{{project.url}}" class="btn btn-light runded-0 btn-sm" target="_blank">{{project.url}}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+<div class="row my-4 text-center ">
+    <div class="col-md-6 p-4">
+        <h3>Habilidades y conocimientos</h3>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-black text-light">Lenguajes: Python, SQL</li>
+            <li class="list-group-item bg-black text-light">Frameworks: Flask, Django</li>
+            <li class="list-group-item bg-black text-light">Desarrollo de CRUDs robustos</li>
+            <li class="list-group-item bg-black text-light">Manejo de bases de datos</li>
+            <li class="list-group-item bg-black text-light">Trabajo en equipo</li>
+        </ul>
+    </div>
+
+    <div class="col-md-6 p-4">
+        <h3>Educación</h3>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-black text-light">Analista de Sistemas y Programacion | Combate Mborore | 2022
+                a 2023
+            </li>
+            <li class="list-group-item bg-black text-light">Curso completo de Python 2024-De cero a Master con Python
+                3/Flas7Django | UDEMY | 2023
+            </li>
+            <li class="list-group-item bg-black text-light">Estudio principalmente autodidacta a traves de cursos de Udemy y Youtube</li>
+
+        </ul>
+    </div>
+</div>
+
+<div class="row p-4">
+    <img src="{% static 'portfolio/certificado_udemy.jpg'%}" class="img-fluid" alt="...">
+</div>
+
+{% endblock %}
