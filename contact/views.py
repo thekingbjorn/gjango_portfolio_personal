@@ -17,7 +17,7 @@ def contact(request):
                 "Mensage desde el Portafolio",# Asunto
                 f"De {name} \n y su correo es {mail} \n{content}",#Mensaje
                 "portafolio.com",#Email de origen 
-                ["alexanderzelarayan6@gmail.com"],# email de destino
+                ["garcetejulian3@gmail.com"],# email de destino
                 reply_to=[mail]
             )
             # lo enviamos y redireccionamos 
