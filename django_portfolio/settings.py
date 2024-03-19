@@ -26,8 +26,11 @@ SECRET_KEY = "jkashdlasjkdjad"
 DEBUG = True
 
 
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+
 ALLOWED_HOSTS = ['localhost','web-production-d80b.up.railway.app']
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 # Application definition
@@ -39,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'whitenoise.runserver_nostatic'
     'blog',
     'portfolio',
     'contact',
@@ -46,6 +50,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
