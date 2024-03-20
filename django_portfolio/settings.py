@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['localhost','web-production-d80b.up.railway.app']
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+CSRF_TRUSTED_ORIGINS= ["https://web-production-d80b.up.railway.app"]
 
 # Application definition asoidjasokfjaofjaskflakjflas
 
