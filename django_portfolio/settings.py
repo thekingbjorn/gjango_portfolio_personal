@@ -33,7 +33,7 @@ ALLOWED_HOSTS = ['localhost','web-production-d80b.up.railway.app']
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
-# Application definition
+# Application definition asoidjasokfjaofjaskflakjflas
 
 INSTALLED_APPS = [
     'django.contrib.admin',
